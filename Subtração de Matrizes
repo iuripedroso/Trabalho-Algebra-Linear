@@ -1,0 +1,53 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+    int linha, coluna, linha2, coluna2, i = 0, j, k;
+    int coluna3, linha3;
+
+    do {
+        cout << "Insira o numero de linhas e colunas da primeira e segunda matriz" << endl << "1° = ";
+        cin >> linha >> coluna;
+        cout << "2° = ";
+        cin >> linha2 >> coluna2;
+
+        if (coluna == coluna2 && linha == linha2) {
+            i++;
+        } else {
+            cout << endl << "O numero de linhas e colunas da primeira matriz deve ser igual ao da segunda matriz!" << endl;
+        }
+    } while (i != 1);
+
+    int M1[linha][coluna];
+    int M2[linha2][coluna2];
+    linha3 = linha; 
+    coluna3 = coluna;
+    int resultado[linha3][coluna3]; // Resultante 
+
+    cout << "Insira os valores da primeira matriz" << endl;
+    for (i = 0; i < linha; i++) {
+        for (j = 0; j < coluna; j++) {
+            cin >> M1[i][j];
+        }
+    }
+
+    cout << "Insira os valores da segunda matriz" << endl;
+    for (i = 0; i < linha2; i++) {
+        for (j = 0; j < coluna2; j++) {
+            cin >> M2[i][j];
+        }
+    }
+
+    cout << "subtracao das matrizes: "<< endl;
+    for (i = 0; i < linha; i++) {
+        for (j = 0; j < coluna; j++) {
+            resultado[i][j] = M1[i][j] - M2[i][j];
+            cout << resultado[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
+
